@@ -5,7 +5,7 @@ CREATE TABLE voice_type (
     CONSTRAINT unq_voice_type UNIQUE (voice_type)
 );
 
--- Make "People" Table
+-- Make "People" Table 
 CREATE TABLE people (
     id SERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE social_media(
     CONSTRAINT fk_people_social FOREIGN KEY (id_people) REFERENCES people(id)
 );
 
--- Make "Project" Table
+-- Make "Project" Table - (Unique Project Constraint)
 CREATE TABLE project (
     id SERIAL NOT NULL PRIMARY KEY,
     id_people INT,
@@ -58,7 +58,7 @@ CREATE TABLE frequency_people (
     CONSTRAINT fk_frequency_frequency_people FOREIGN KEY (id_frequency) REFERENCES frequency(id)
 );
 
--- Make "History_Dub" Table
+-- Make "History_Dub" Table - (Unique History Dub - Constraint)
 CREATE TABLE history_dub (
     id SERIAL NOT NULL PRIMARY KEY,
     id_people INT NOT NULL,
