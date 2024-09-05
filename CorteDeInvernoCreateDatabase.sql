@@ -46,7 +46,7 @@ CREATE TABLE frequency (
     id_project INT,
     frequency VARCHAR(20) NOT NULL,
     CONSTRAINT fk_people_frequency FOREIGN KEY (id_people) REFERENCES people(id),
-    CONSTRAINT fk_project_frequency FOREIGN KEY (id_project) REFERENCES project(id),
+    CONSTRAINT fk_project_frequency FOREIGN KEY (id_project) REFERENCES project(id)
 );
 
 -- Make "Frequency_People" relation
