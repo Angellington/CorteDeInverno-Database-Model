@@ -1,0 +1,8 @@
+INSERT INTO voice_type (voice_type) VALUES
+('VOZ FLEXÍVEL'),
+('VOZ MASCULINA'),
+('VOZ FEMININA'),
+('VOZ FINA'),
+('VOZ INFANTIL'),
+('VOZ GROSSA'),
+('VOZ GROSSA MÁSCULA'),

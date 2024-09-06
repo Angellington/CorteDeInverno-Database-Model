@@ -11,9 +11,18 @@ CREATE TABLE people (
     name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30),
     nickname VARCHAR(30) NOT NULL,
-    id_voice_type INT,
     CONSTRAINT fk_voice_type FOREIGN KEY (id_voice_type) REFERENCES voice_type(id)
 );
+
+-- Make N:N "People - Voice Type" Table
+CREATE TABLE people_voice_type (
+    id SERIAL PRIMARY KEY,
+    id_people INT NOT NULL,
+    id_voice_type INT NOT NULL,
+    CONSTRAINT fk_people_voice_type_people FOREIGN KEY (id_people) REFERENCES people(id),
+    CONSTRAINT fk_people_voice_type_voice_type FOREIGN KEY (id_voice_type) REFERENCES voice_type(id),
+    CONSTRAINT unq_people_voice_type UNIQUE (id_people, id_voice_type)
+)
 
 -- Make "Social Media" Table
 CREATE TABLE social_media(
